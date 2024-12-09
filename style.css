@@ -1,0 +1,289 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #1b1b1b; /* Dark background for contrast */
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+#hero {
+  background: url('https://source.unsplash.com/1920x1080/?biotechnology') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2ecc71; /* Emerald Green for main hero heading */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.hero-buttons button {
+  background-color: #6abf69; /* Moss Green */
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  background-color: #228b22; /* Forest Green on hover */
+  transform: scale(1.1);
+}
+
+/* Catalog Section */
+#catalog {
+  padding: 50px 20px;
+  text-align: center;
+  background: #121212; /* Deep black for contrast */
+}
+
+#catalog h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2ecc71; /* Emerald Green */
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.catalog-item {
+  background: #2d2d2d; /* Neutral charcoal black */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.catalog-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #6abf69; /* Moss Green for card titles */
+}
+
+.catalog-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.catalog-item:hover {
+  transform: translateY(-10px);
+  background-color: #333333; /* Lighter hover background */
+}
+
+/* Support Section */
+#section-h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #2ecc71; /* Emerald Green */
+}
+
+.support-section {
+  background-color: #121212; /* Deep black */
+  padding: 50px 0;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.support-card {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #6abf69; /* Moss Green border */
+  border-radius: 10px;
+  background-color: #2d2d2d; /* Neutral charcoal black for card background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle hover effect */
+}
+
+.support-card .icon {
+  font-size: 2rem;
+  color: #2ecc71; /* Emerald Green for icons */
+  margin-bottom: 10px;
+}
+
+.support-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff; /* White for headings */
+}
+
+.support-card p {
+  font-size: 1rem;
+  color: #a0aec0; /* Muted light gray for descriptions */
+}
+
+/* About Us Section */
+.about-section {
+  padding: 50px 0;
+  background-color: #1b1b1b; /* Dark gray for consistency */
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 2px solid #6abf69; /* Moss Green border */
+}
+
+.about-details {
+  flex: 1;
+  color: #ffffff; /* White text for readability */
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-card {
+  padding: 15px;
+  background-color: #2d2d2d; /* Charcoal Black */
+  border: 1px solid #228b22; /* Forest Green border */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hover effect */
+}
+
+.about-card h3 {
+  font-size: 1.25rem;
+  color: #6abf69; /* Moss Green for headings */
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #a0aec0; /* Muted light gray for descriptions */
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  background: #1b1b1b;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2ecc71; /* Emerald Green */
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #6abf69; /* Moss Green borders */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2ecc71; /* Emerald Green focus */
+}
+
+.contact-form button {
+  background-color: #228b22; /* Forest Green */
+  color: #ffffff;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2ecc71; /* Emerald Green on hover */
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #0d0d0d; /* Deep black */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #2ecc71; /* Emerald Green for social icons */
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #6abf69; /* Moss Green on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -71,7 +71,6 @@ A modern and responsive website for **Genezyme Solutions**, a biotechnology comp
 - **Customization**: Explains how to modify products and links.
 - **Contact Info**: For support or further queries.
 
-Let me know if there’s anything else you'd like to include! 😊
 
 
 

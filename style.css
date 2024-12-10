@@ -37,14 +37,21 @@ body {
   color: #f1e9e9;
 }
 
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .hero-buttons button {
   background-color: #6abf69; /* Moss Green */
-  color: #000;
+  color: #000; /* Black text for contrast */
   border: none;
-  padding: 15px 30px;
+  padding: 15px 20px;
   font-size: 1rem;
   cursor: pointer;
-  margin: 5px;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
@@ -53,6 +60,7 @@ body {
   background-color: #228b22; /* Forest Green on hover */
   transform: scale(1.1);
 }
+
 
 /* About Us Section */
 .about-section {
@@ -418,6 +426,197 @@ footer {
 .social-icons a:hover {
   color: #6abf69; /* Moss Green on hover */
 }
+
+/* Chatbot */
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1rem;
+}
+
+/* Chatbot Toggle Button */
+#chatbot-toggle {
+  background: linear-gradient(135deg, #2ecc71, #6abf69); /* Emerald and Moss Green gradient */
+  color: #090909; 
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#chatbot-toggle:hover {
+  transform: scale(1.1);
+  background: #228b22; /* Forest Green on hover */
+}
+
+/* Chatbox Container */
+#chatbox {
+  display: none;
+  width: 400px;
+  height: 500px;
+  background: #121212; /* Deep black background */
+  border: 2px solid #2ecc71; /* Emerald Green border */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Header Section */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #2ecc71; /* Emerald Green border */
+  padding: 10px;
+}
+
+.chatbot-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.chat-header h3 {
+  font-size: 1.2em;
+  color: #ffffff; /* White text */
+}
+
+/* Chat Content */
+.chat-content {
+  padding: 15px;
+  max-height: 350px;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #1b1b1b, #333333); /* Dark gradient background */
+  border-radius: 5px;
+}
+
+/* Questions List */
+.chat-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-questions .question {
+  cursor: pointer;
+  background: #6abf69; /* Moss Green */
+  color: #000000; /* Black text */
+  margin: 5px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.chat-questions .question:hover {
+  transform: translateY(-3px);
+  background: #228b22; /* Forest Green on hover */
+}
+
+/* Chat Answers */
+#chat-answer {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  color: #ffffff; /* White text */
+  background: #2ecc71; /* Emerald Green background */
+  border: 1px solid #6abf69; /* Moss Green border */
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  #chatbox {
+    width: 90%;
+    height: 400px;
+  }
+
+  #chatbot-toggle {
+    padding: 10px 15px;
+  }
+
+  .chat-header h3 {
+    font-size: 1em;
+  }
+}
+/* Modal Background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Black with transparency */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #1b1b1b; /* Dark background */
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #2ecc71; /* Emerald Green border */
+  border-radius: 10px;
+  width: 50%;
+  color: #ffffff; /* White text */
+  text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+  color: #ffffff;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #2ecc71; /* Emerald Green on hover */
+}
+
+/* Form Styles */
+#demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#demo-form input,
+#demo-form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #6abf69; /* Moss Green border */
+}
+
+#demo-form input:focus {
+  border-color: #2ecc71; /* Emerald Green on focus */
+  outline: none;
+}
+
+#demo-form button {
+  background-color: #6abf69; /* Moss Green */
+  color: #000000;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+#demo-form button:hover {
+  background-color: #228b22; /* Forest Green */
+}
+
 
 
 /* Animations */

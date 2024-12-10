@@ -1,7 +1,10 @@
-// Smooth Scrolling Function
 function scrollToSection(sectionId) {
-  document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 }
+
 
 // Form Submit Alert
 document.querySelector('.contact-form').addEventListener('submit', function (e) {
@@ -30,3 +33,66 @@ function moveSlide(direction) {
   // Move wrapper
   wrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const chatbotToggle = document.getElementById('chatbot-toggle');
+  const chatbox = document.getElementById('chatbox');
+  const chatAnswer = document.getElementById('chat-answer');
+  const openChatbot = document.getElementById('open-chatbot'); // Live Chat trigger link
+
+  // Handle chatbot toggle visibility
+  chatbotToggle.addEventListener('click', function () {
+    chatbox.style.display = chatbox.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Open chatbot from "Live Chat" link
+  openChatbot.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default link behavior
+    chatbox.style.display = 'block'; // Show chatbot
+  });
+
+  // Dynamic answers based on clicks
+  const questionResponses = {
+    0: 'We offer various biotechnology products, including PCR machines and flow cytometers.',
+    1: 'Our services include product support, technical consultations, and research solutions.',
+    2: 'We serve industries like healthcare, pharmaceuticals, and academic research.',
+    3: 'You can contact support at +1800-123-4567 or email us at support@genezyme.com.',
+    4: 'Yes, we currently have promotions on bulk orders. Contact us for more details.',
+    5: 'For all other inquiries, please reach out to our support team directly.',
+  };
+
+  const questionElements = document.querySelectorAll('.chat-questions .question');
+
+  questionElements.forEach((questionEl, index) => {
+    questionEl.addEventListener('click', function () {
+      chatAnswer.innerText = questionResponses[index];
+    });
+  });
+});
+// Open the modal
+function openModal() {
+  const modal = document.getElementById('demo-modal');
+  modal.style.display = 'block';
+}
+
+// Close the modal
+function closeModal() {
+  const modal = document.getElementById('demo-modal');
+  modal.style.display = 'none';
+}
+
+// Close modal when clicking outside the modal content
+window.onclick = function (event) {
+  const modal = document.getElementById('demo-modal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+
+// Handle form submission
+const demoForm = document.getElementById('demo-form');
+demoForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent page reload
+  alert('Demo session successfully scheduled!');
+  closeModal(); // Close the modal after submission
+});

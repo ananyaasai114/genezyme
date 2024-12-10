@@ -9,20 +9,24 @@
 </head>
 <body>
   <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Unlock the Future of Biotechnology</h1>
-      <p>
-        Genezyme Solutions – Your trusted partner for cutting-edge biotechnology
-        and life science instruments. Explore our comprehensive product catalog
-        and technical specifications to elevate your research and discoveries.
-      </p>
-      <div class="hero-buttons">
-        <button onclick="scrollToSection('catalog')">View Products</button>
-        <button onclick="scrollToSection('contact')">Get Support</button>
-      </div>
+<section id="hero">
+  <div class="hero-content">
+    <h1>Unlock the Future of Biotechnology</h1>
+    <p>
+      Genezyme Solutions – Your trusted partner for cutting-edge biotechnology
+      and life science instruments. Explore our products and connect with us for support.
+    </p>
+    <div class="hero-buttons">
+      <button onclick="scrollToSection('about')">About Us</button>
+      <button onclick="scrollToSection('team')">Meet the Team</button>
+      <button onclick="scrollToSection('catalog')">View Products</button>
+      <button onclick="scrollToSection('gem-portal')">GeM Portal</button>
+      <button onclick="scrollToSection('support')">Customer Support</button>
+      <button onclick="scrollToSection('contact')">Contact Us</button>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- About Us Section -->
   <section id="about" class="about-section">
@@ -160,21 +164,21 @@
         <i class="icon fa fa-comments"></i>
         <h3>Live Chat</h3>
         <p>
-          <a href="https://genezyme.com/livechat" target="_blank">Start a Live Chat</a>
+          <a href="#" id="open-chatbot">Start a Live Chat</a>
         </p>
       </div>
       <div class="support-card">
         <i class="icon fa fa-calendar"></i>
         <h3>Schedule a Demo</h3>
         <p>
-          <a href="https://genezyme.com/demo" target="_blank">Book a Demo</a>
+          <a href="#" onclick="openModal()">Book a Demo</a>
         </p>
       </div>
     </div>
   </div>
 </section>
 
-  <!-- Contact Us Section -->
+<!-- Contact Us Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <form class="contact-form">
@@ -205,8 +209,52 @@
     </div>
   </div>
 </footer>
-<script src="script.js"></script>
+<!-- Chatbot Button -->
+<div id="chatbot">
+  <button id="chatbot-toggle">💬 Chat with Us!</button>
+  <div id="chatbox">
+    <div class="chat-header">
+      <img src="chat.png" alt="Chatbot Agent" class="chatbot-image">
+      <h3>How can I assist you today?</h3>
+    </div>
+    <div class="chat-content">
+      <ul class="chat-questions">
+        <li onclick="showAnswer(0)" class="question">What products do you offer?</li>
+        <li onclick="showAnswer(1)" class="question">What are your services?</li>
+        <li onclick="showAnswer(2)" class="question">What industries do you serve?</li>
+        <li onclick="showAnswer(3)" class="question">How can I contact support?</li>
+        <li onclick="showAnswer(4)" class="question">Are there any promotions?</li>
+        <li onclick="showAnswer(5)" class="question">Contact us for other queries</li>
+      </ul>
+    </div>
+    <p id="chat-answer">Click a question to get started...</p>
+  </div>
+</div>
+<!-- Book a Demo Modal -->
+<div id="demo-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Schedule a Demo</h2>
+    <form id="demo-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required>
+      
+      <label for="time">Preferred Time:</label>
+      <input type="time" id="time" name="time" required>
+      
+      <button type="submit">Book Demo</button>
+    </form>
+  </div>
+</div>
 
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -96,3 +96,34 @@ demoForm.addEventListener('submit', function (event) {
   alert('Demo session successfully scheduled!');
   closeModal(); // Close the modal after submission
 });
+const textElement = document.querySelector('.typing');
+const textArray = ['Genomic Sequencing', 'Proteomic Analysis', 'Biomarker Identification', 'Custom Research Solutions'];
+let i = 0;
+
+document.addEventListener('DOMContentLoaded', function () {
+  const typingElement = document.querySelector('.typing');
+  const services = ['Genomic Sequencing', 'Proteomic Analysis', 'Biomarker Identification', 'Custom Research Solutions'];
+  let serviceIndex = 0; // Tracks the current term being typed
+  let charIndex = 0; // Tracks the current character being typed
+  const typingSpeed = 100; // Speed of typing (in milliseconds)
+  const pauseAfterWord = 1500; // Pause after typing each term (in milliseconds)
+
+  function type() {
+    if (charIndex < services[serviceIndex].length) {
+      // Add the next character to the element
+      typingElement.textContent += services[serviceIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingSpeed);
+    } else {
+      // Pause after completing the term
+      setTimeout(() => {
+        charIndex = 0; // Reset character index
+        serviceIndex = (serviceIndex + 1) % services.length; // Move to the next term
+        typingElement.textContent = ''; // Clear the text
+        type(); // Start typing the next term
+      }, pauseAfterWord);
+    }
+  }
+
+  type(); // Start the typing effect
+});

@@ -231,6 +231,152 @@ body {
 }
 
 
+/* Our Services Section */
+/* Services Section */
+.services-section {
+  padding: 50px 20px;
+  background-color: #121212; /* Deep black for distinction */
+  text-align: center;
+}
+
+.services-heading {
+  font-size: 2.5rem;
+  color: #ffffff; /* White for contrast */
+  margin-bottom: 30px;
+}
+
+.services-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Service Cards */
+.service-card {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; /* Enables 3D rotation */
+}
+
+.service-card-front,
+.service-card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Front Card */
+.service-card-front {
+  background: linear-gradient(135deg, #2ecc71, #6abf69); /* Gradient for front */
+  color: #ffffff;
+  transform: rotateY(0);
+}
+
+.service-card-front i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.service-card-front h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+/* Back Card */
+.service-card-back {
+  background-color: #2d2d2d; /* Dark for back */
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+.service-card-back p {
+  font-size: 1rem;
+  color: #a0aec0; /* Muted light gray */
+}
+
+/* Flip Effect */
+.service-card:hover .service-card-front {
+  transform: rotateY(-180deg);
+}
+
+.service-card:hover .service-card-back {
+  transform: rotateY(0);
+}
+
+.typing {
+  font-size: 2.5rem;
+  color: #2ecc71; /* Emerald Green typing text */
+  border-right: 3px solid #2ecc71; /* Cursor effect */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 100%;
+  animation: blink 0.75s step-end infinite; /* Cursor blinking */
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+/* Catalog Styles */
+.services-catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background-color: #2d2d2d; /* Charcoal Black */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #6abf69; /* Moss Green border */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.service-card h3 {
+  color: #2ecc71; /* Emerald Green */
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #a0aec0; /* Muted light gray */
+}
+
+
+/* Description */
+.typing-description {
+  font-size: 1.2rem;
+  color: #ffffff;
+  padding-top: 10px;
+}
+
 /* Catalog Section */
 #catalog {
   padding: 50px 20px;

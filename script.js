@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Dynamic answers based on clicks
   const questionResponses = {
     0: 'We offer various biotechnology products, including PCR machines and flow cytometers.',
-    1: 'Our services include product support, technical consultations, and research solutions.',
-    2: 'We serve industries like healthcare, pharmaceuticals, and academic research.',
-    3: 'You can contact support at +1800-123-4567 or email us at support@genezyme.com.',
+    1: 'Our services include Molecular Biology, Identification and Diagnostic, Polyclonal Antibody Production, Agriculture,R&D and Protein Related Services',
+    2: 'We serve industries like laboratories, educational institutions, and academic research.',
+    3: 'You can contact support at +91-9900549000 or email us at genezyme.bio@gmail.com.',
     4: 'Yes, we currently have promotions on bulk orders. Contact us for more details.',
     5: 'For all other inquiries, please reach out to our support team directly.',
   };
@@ -97,12 +97,12 @@ demoForm.addEventListener('submit', function (event) {
   closeModal(); // Close the modal after submission
 });
 const textElement = document.querySelector('.typing');
-const textArray = ['Genomic Sequencing', 'Proteomic Analysis', 'Biomarker Identification', 'Custom Research Solutions'];
+const textArray = ['Molecular Biology', 'Identification and Diagnostic', 'Polyclonal Antibody Production', 'Agriculture','R&D','Protein Related'];
 let i = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
   const typingElement = document.querySelector('.typing');
-  const services = ['Genomic Sequencing', 'Proteomic Analysis', 'Biomarker Identification', 'Custom Research Solutions'];
+  const services = ['Molecular Biology', 'Identification and Diagnostic', 'Polyclonal Antibody Production', 'Agriculture','R&D','Protein Related'];
   let serviceIndex = 0; // Tracks the current term being typed
   let charIndex = 0; // Tracks the current character being typed
   const typingSpeed = 100; // Speed of typing (in milliseconds)
@@ -127,3 +127,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
   type(); // Start the typing effect
 });
+function toggleInfo(serviceId) {
+  const currentCard = document.getElementById(serviceId).parentElement;
+  const allCards = document.querySelectorAll('.service-card');
+  const allInfos = document.querySelectorAll('.service-info');
+
+  // Reset all other cards and hide their content
+  allCards.forEach((card) => {
+      if (card !== currentCard) {
+          card.classList.remove('expanded');
+          card.querySelector('.service-info').style.display = 'none';
+      }
+  });
+
+  // Toggle the clicked card and its content
+  const info = document.getElementById(serviceId);
+  if (info.style.display === 'block') {
+      info.style.display = 'none';
+      currentCard.classList.remove('expanded');
+  } else {
+      info.style.display = 'block';
+      currentCard.classList.add('expanded');
+  }
+}
+// Function to display product details on hover
+function showDetails(card) {
+  const details = card.querySelector('.product-details');
+  details.style.display = 'block';
+}
+
+// Function to hide product details on mouse out
+function hideDetails(card) {
+  const details = card.querySelector('.product-details');
+  details.style.display = 'none';
+}
+

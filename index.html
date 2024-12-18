@@ -13,14 +13,15 @@
   <div class="hero-content">
     <h1>Unlock the Future of Biotechnology</h1>
     <p>
-      Genezyme Solutions – Your trusted partner for cutting-edge biotechnology
+      <b>Genezyme Solutions</b> – Your trusted partner for cutting-edge biotechnology
       and life science instruments. Explore our products and connect with us for support.
     </p>
     <div class="hero-buttons">
       <button onclick="scrollToSection('about')">About Us</button>
       <button onclick="scrollToSection('team')">Meet the Team</button>
-      <button onclick="scrollToSection('catalog')">View Products</button>
       <button onclick="scrollToSection('services')">Our Services</button> <!-- New Button -->
+      <button onclick="scrollToSection('catalog')">View Instruments</button>
+      <button onclick="scrollToSection('product-catalog')">View Products</button>
       <button onclick="scrollToSection('gem-portal')">GeM Portal</button>
       <button onclick="scrollToSection('support')">Customer Support</button>
       <button onclick="scrollToSection('contact')">Contact Us</button>
@@ -33,10 +34,10 @@
   <section id="about" class="about-section">
     <div class="container about-container">
       <div class="about-image">
-        <img src="about.jpg" alt="Team Photo">
+        <img src="abt.jpg" alt="Team Photo">
       </div>
       <div class="about-details">
-        <h2 class="section-title">About Genezyme Solutions</h2>
+        <h2 class="section-title">About <b>Genezyme Solutions</b></h2>
         <div class="about-grid">
           <div class="about-card">
             <h3>Our Mission</h3>
@@ -64,17 +65,21 @@
     <h2>Meet the Team</h2>
     <div class="team-container">
       <div class="team-member">
-        <img src="team1.jpg" alt="Dr. Alex Smith">
-        <h3>Dr. Alex Smith</h3>
-        <p>Chief Scientist</p>
-        <a href="mailto:alexsmith@genezyme.com" target="_blank">Email</a>
+        <img src="chandru.png" alt="Dr.S Chandrashekaran">
+        <h3>Dr.S Chandrashekaran</h3>
+        <p>Advisory Board Member<br>Managing Director,Genei Labratories</p>
       </div>
       <div class="team-member">
-        <img src="team2.jpg" alt="Dr. Emily Davis">
-        <h3>Dr. Emily Davis</h3>
-        <p>Research Director</p>
-        <a href="mailto:emilydavis@genezyme.com" target="_blank">Email</a>
+        <img src="hema.png" alt="Dr. Hemalatha V">
+        <h3>Dr.Hemalatha V</h3>
+        <p>Advisory Board Member<br>Trainer,Genei Laboratories </p>
       </div>
+      <div class="team-container">
+        <div class="team-member">
+          <img src="yk.jpg" alt="Yatish Kumar S">
+          <h3>Yatish Kumar S</h3>
+          <p>Director,Genezyme Solutions</p>
+        </div>
     </div>
   </section>
   <!-- Our Services Section -->
@@ -82,50 +87,85 @@
     <h2 class="services-heading">
       Our Services:<br> <span class="typing"></span>
     </h2>
-    <div class="services-catalog">
-      <div class="service-card">
-        <div class="service-card-front">
-          <i class="fas fa-dna"></i>
-          <h3>Genomic Sequencing</h3>
-        </div>
-        <div class="service-card-back">
-          <p>Cutting-edge sequencing solutions for advanced research.</p>
-        </div>
+    <div class="service-container">
+      <!-- Molecular Biology Services -->
+      <div class="service-card" onclick="toggleInfo('molecular')">
+          <h3>Molecular Biology Services</h3>
+          <div class="service-info" id="molecular">
+              <ul>
+                  <li>Gene synthesis up to 7200bp.</li>
+                  <li>MRNA synthesis up to 1800bp.</li>
+                  <li>Custom variant DNA libraries.</li>
+                  <li>Site-directed mutagenesis.</li>
+                  <li>Cloning and DNA purification.</li>
+              </ul>
+          </div>
       </div>
-      <div class="service-card">
-        <div class="service-card-front">
-          <i class="fas fa-flask"></i>
-          <h3>Proteomic Analysis</h3>
-        </div>
-        <div class="service-card-back">
-          <p>Comprehensive protein analysis to drive your discoveries.</p>
-        </div>
+
+      <!-- Identification and Diagnostic Services -->
+      <div class="service-card" onclick="toggleInfo('diagnostic')">
+          <h3>Identification and Diagnostic Services</h3>
+          <div class="service-info" id="diagnostic">
+              <ul>
+                  <li>Bacterial identification.</li>
+                  <li>Fungal identification.</li>
+                  <li>Plant identification.</li>
+                  <li>Viroid and insect identification.</li>
+              </ul>
+          </div>
       </div>
-      <div class="service-card">
-        <div class="service-card-front">
-          <i class="fas fa-microscope"></i>
-          <h3>Biomarker Identification</h3>
-        </div>
-        <div class="service-card-back">
-          <p>Reliable biomarker identification for diagnostics and research.</p>
-        </div>
+
+      <!-- Polyclonal Antibody Production -->
+      <div class="service-card" onclick="toggleInfo('antibody')">
+          <h3>Polyclonal Antibody Production</h3>
+          <div class="service-info" id="antibody">
+              <ul>
+                  <li>Custom Polyclonal antibody production.</li>
+                  <li>Antibody production in mice.</li>
+              </ul>
+          </div>
       </div>
-      <div class="service-card">
-        <div class="service-card-front">
-          <i class="fas fa-laptop-medical"></i>
-          <h3>Custom Research Solutions</h3>
-        </div>
-        <div class="service-card-back">
-          <p>Tailored solutions to meet your unique research needs.</p>
-        </div>
+
+      <!-- Agri Services -->
+      <div class="service-card" onclick="toggleInfo('agri')">
+          <h3>Agri Services</h3>
+          <div class="service-info" id="agri">
+              <ul>
+                  <li>Cloning services for any plasmid vector.</li>
+                  <li>Transgenic plant analysis by qPCR.</li>
+                  <li>Genome editing services.</li>
+              </ul>
+          </div>
       </div>
-    </div>
+
+      <!-- R&D Services -->
+      <div class="service-card" onclick="toggleInfo('rnd')">
+          <h3>R&D Services</h3>
+          <div class="service-info" id="rnd">
+              <ul>
+                  <li>R&D projects up to proof of concept.</li>
+                  <li>Design MDx assay for various targets.</li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Protein Related Services -->
+      <div class="service-card" onclick="toggleInfo('protein')">
+          <h3>Protein Related Services</h3>
+          <div class="service-info" id="protein">
+              <ul>
+                  <li>Protein purification by Affinity chromatography.</li>
+                  <li>Antibody conjugation and peptide synthesis.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
   </section>
   
 
   <!-- Comprehensive Product Catalog Section -->
 <section id="catalog">
-  <h2>Comprehensive Product Catalog</h2>
+  <h2>Instruments Catalog</h2>
   <div class="catalog-slider">
     <div class="catalog-wrapper">
       <div class="catalog-item">
@@ -175,6 +215,136 @@
     <button class="slide-btn right" onclick="moveSlide(1)">&#9654;</button>
   </div>
 </section>
+<!-- Product Catalog Section -->
+
+<section id="product-catalog" class="product-catalog-section">
+  <h2 class="product-heading">Products Catalog</h2>
+  <div class="product-container">
+
+    <!-- Product 1: 2X NeoTaq Master Mix -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2X NeoTaq Master Mix</h3>
+        </div>
+        <div class="card-back">
+          <p>High-performance master mix for PCR reactions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2: EvaGen Green Master Mix -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>EvaGen Green Master Mix</h3>
+        </div>
+        <div class="card-back">
+          <p>Suitable for EvaGreen-based qPCR analysis.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3: JetStart Taq DNA Polymerase -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>JetStart Taq DNA Polymerase</h3>
+        </div>
+        <div class="card-back">
+          <p>Hotstart DNA polymerase for high specificity.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 4: MMLV III Reverse Transcriptase -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>MMLV III Reverse Transcriptase</h3>
+        </div>
+        <div class="card-back">
+          <p>Efficient reverse transcriptase for cDNA synthesis.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 5: KOD Xpress DNA Polymerase -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>KOD Xpress DNA Polymerase</h3>
+        </div>
+        <div class="card-back">
+          <p>Ultra-fast and accurate DNA polymerase.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 6: NeoTaq DNA Polymerase -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>NeoTaq DNA Polymerase</h3>
+        </div>
+        <div class="card-back">
+          <p>High-quality Taq polymerase for standard PCR.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 7: Neo Gold Taq DNA Polymerase -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Neo Gold Taq DNA Polymerase</h3>
+        </div>
+        <div class="card-back">
+          <p>Enhanced polymerase with better yields.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 8: Protein Marker -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Protein Marker</h3>
+        </div>
+        <div class="card-back">
+          <p>Molecular weight marker for protein gels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 9: Master Mix for Genotyping -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>Master Mix for Genotyping</h3>
+        </div>
+        <div class="card-back">
+          <p>Ideal for genotyping applications and assays.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 10: RT-PCR Mix -->
+    <div class="product-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>RT-PCR Mix</h3>
+        </div>
+        <div class="card-back">
+          <p>Optimized mix for reverse transcription PCR.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- GeM Portal Section -->
 <section id="gem-portal" class="gem-section">
   <div class="container">
@@ -196,14 +366,14 @@
         <i class="icon fa fa-phone"></i>
         <h3>Contact Us</h3>
         <p>
-          <a href="tel:+18001234567" target="_blank">Call us at +1800-123-4567</a>
+          <a href="tel:+91-9900549000" target="_blank">Call us at +91-9900549000</a>
         </p>
       </div>
       <div class="support-card">
         <i class="icon fa fa-envelope"></i>
         <h3>Email Support</h3>
         <p>
-          <a href="mailto:support@genezyme.com" target="_blank">support@genezyme.com</a>
+          <a href="mailto:genezyme.bio@gmail.com" target="_blank">genezyme.bio@gmail.com</a>
         </p>
       </div>
       <div class="support-card">
@@ -240,16 +410,10 @@
   <div class="footer-content">
     <p>&copy; 2024 Genezyme Solutions. All Rights Reserved.</p>
     <div class="social-icons">
-      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/yathish-kumar-shivanna-823538172?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtCI6Mw97TFqGe577QHmzWw%3D%3D" target="_blank" aria-label="LinkedIn">
         <i class="fab fa-linkedin-in"></i>
       </a>
-      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+      <a href="https://www.instagram.com/travel_hrushi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
     </div>

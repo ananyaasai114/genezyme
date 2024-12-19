@@ -4,8 +4,86 @@ body {
   margin: 0;
   padding: 0;
   color: #ffffff;
-  background-color: #1b1b1b; /* Dark background for contrast */
+  background-color: rgba(0, 0, 0, 0.3); /* Dark background for contrast */
   scroll-behavior: smooth;
+}
+/* Floating Header */
+.floating-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #121212; /* Deep Black */
+  color: #ffffff;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.floating-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.floating-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #33b864; /* Emerald Green for brand name */
+  white-space: nowrap; /* Prevents the brand name from wrapping */
+}
+
+.floating-header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px; /* Space between buttons */
+  flex-wrap: wrap; /* Allows buttons to wrap if there isn't enough space */
+}
+
+.floating-header nav ul li {
+  display: inline-block;
+}
+
+.floating-header nav ul li button {
+  background-color: #2ecc71; /* Emerald Green */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevents text wrapping inside buttons */
+}
+
+.floating-header nav ul li button:hover {
+  background-color: #6abf69; /* Moss Green on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Add space for floating header */
+body {
+  padding-top: 70px; /* Adjust to the height of the header */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-header .container {
+    flex-direction: column; /* Stack brand name and nav buttons vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .floating-header nav ul {
+    flex-direction: column; /* Stack buttons vertically */
+    width: 100%; /* Use full width for buttons */
+  }
+
+  .floating-header nav ul li button {
+    width: 100%; /* Make buttons full width for better usability */
+  }
 }
 
 /* Hero Section */
@@ -26,9 +104,15 @@ body {
 
 .hero-content h1 {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: bolder;
   margin-bottom: 20px;
   color: #2ecc71; /* Emerald Green for main hero heading */
+}
+.hero-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color:#f1e9e9 ; /* Emerald Green for main hero heading */
 }
 
 .hero-content p {
@@ -60,12 +144,50 @@ body {
   background-color: #228b22; /* Forest Green on hover */
   transform: scale(1.1);
 }
+/* Hero Section Animations */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 1.5s ease forwards;
+}
+
+.fade-slide:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.fade-slide:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.fade-slide:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+.fade-slide:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.fade-slide:nth-child(5) {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 /* About Us Section */
 .about-section {
   padding: 50px 0;
-  background-color: #1b1b1b; /* Dark gray for consistency */
+  background-color: #121212; /* Dark gray for consistency */
 }
 
 .about-container {
@@ -545,7 +667,7 @@ header span {
 /* Contact Section */
 #contact {
   padding: 50px 20px;
-  background: #1b1b1b;
+  background: #121212;
   text-align: center;
 }
 
@@ -593,6 +715,11 @@ footer {
   padding: 20px;
   text-align: center;
   background: #0d0d0d; /* Deep black */
+}
+.footer-logo {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .footer-content {
@@ -736,30 +863,7 @@ footer {
     font-size: 1em;
   }
 }
-/* Modal Background */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6); /* Black with transparency */
-}
 
-/* Modal Content */
-.modal-content {
-  background-color: #1b1b1b; /* Dark background */
-  margin: 10% auto;
-  padding: 20px;
-  border: 2px solid #2ecc71; /* Emerald Green border */
-  border-radius: 10px;
-  width: 50%;
-  color: #ffffff; /* White text */
-  text-align: center;
-}
 
 /* Close Button */
 .close-btn {
@@ -773,38 +877,6 @@ footer {
 
 .close-btn:hover {
   color: #2ecc71; /* Emerald Green on hover */
-}
-
-/* Form Styles */
-#demo-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-#demo-form input,
-#demo-form button {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #6abf69; /* Moss Green border */
-}
-
-#demo-form input:focus {
-  border-color: #2ecc71; /* Emerald Green on focus */
-  outline: none;
-}
-
-#demo-form button {
-  background-color: #6abf69; /* Moss Green */
-  color: #000000;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-#demo-form button:hover {
-  background-color: #228b22; /* Forest Green */
 }
 
 

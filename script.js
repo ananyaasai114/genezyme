@@ -6,11 +6,6 @@ function scrollToSection(sectionId) {
   }
 }
 
-// Form Submit Alert
-document.querySelector(".contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Thank you for reaching out! We will get back to you soon.");
-});
 
 // Slider Functionality (Fixes Applied)
 let currentIndex = 0;
@@ -72,34 +67,6 @@ function moveSlide(direction) {
       });
     });
   }
-
-
-// Modal Functionality
-function openModal() {
-  document.getElementById("demo-modal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("demo-modal").style.display = "none";
-}
-
-// Close modal when clicking outside the content
-window.addEventListener("click", function (event) {
-  const modal = document.getElementById("demo-modal");
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-
-// Handle Form Submission in Modal
-const demoForm = document.getElementById("demo-form");
-if (demoForm) {
-  demoForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    alert("Demo session successfully scheduled!");
-    closeModal();
-  });
-}
 
 // Typing Effect
 document.addEventListener("DOMContentLoaded", function () {

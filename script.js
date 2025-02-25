@@ -36,9 +36,7 @@ function moveSlide(direction) {
 
   wrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 }
-
-// Chatbot Functionality (Fixes Applied)
-document.addEventListener("DOMContentLoaded", function () {
+// Chatbot Fix
   const chatbotToggle = document.getElementById("chatbot-toggle");
   const chatbox = document.getElementById("chatbox");
   const chatAnswer = document.getElementById("chat-answer");
@@ -67,12 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const questionElements = document.querySelectorAll(".chat-questions .question");
 
-  questionElements.forEach((questionEl, index) => {
-    questionEl.addEventListener("click", function () {
-      chatAnswer.innerText = questionResponses[index];
+  if (questionElements) {
+    questionElements.forEach((questionEl, index) => {
+      questionEl.addEventListener("click", function () {
+        chatAnswer.innerText = questionResponses[index];
+      });
     });
-  });
-});
+  }
+
 
 // Modal Functionality
 function openModal() {
